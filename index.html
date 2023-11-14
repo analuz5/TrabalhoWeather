@@ -14,32 +14,47 @@
     <title>Weather</title>
 </head>
 <body>
+    <h1>AnJo do Tempo</h1>
     <div class="container">
-        <div class="row justify-content-center aling-items-center">
-            <div class="col-md-4">
-                <!--formulário -->
-                <form id="clima" method="post" class="shadow-lg p-3">
-                    <h4 class="text-primary">Pesquisa do Clima</h4>
-                    <div class="mb-3">
-                        <label for="cidade" class="form-label">Cidade</label>
-                        <input type="text" class="form-control" id="cidade" name="cidade" placeholder="Insira a Cidade de Pesquisa" required autofocus/>
+        <div class="pesquisar">
+            <i class="bx bxs-map"></i>
+            <input type="text" placeholder="Insira a cidade" id="cidade">
+            <button class="bx bx-search"></button>               
+        </div>
+
+        <div class="weather-box">
+            <div class="box">
+                <div class="info-weather">
+                    <div class="weather">
+                        <object data="images/vetores/none_day.svg" type="image/svg+xml" style="width:80%"></object> <!--img src="lnk">-->
+                        <p class="temperatura"></p>16<span>°C</span><p>
+                        <p class="descricao">Descrição</p>
                     </div>
-                    <div class="mb-3">
-                        <label for="cep" class="form-label">CEP</label>
-                        <input type="text" class="form-control" id="cep" name="cep" placeholder="Ex: 13309320" pattern="[0-9]{8}" maxlength="8" onchange="atualizaForm()" tittle="Informe o CEP no formato 9999999999">
-                        <div class="spinner-border d-none" id="spinner"></div>
-                    </div>
-                    <div class="mb-3 row">
-                        <label form="endereco" class="form-label">Endereço</label>
-                        <input type="text" class="form-control" id="endereco" name="endereco" placeholder="Endereço Completo">
-                    </div>
-                </label>
-                <button class="btn btn-success" id="salvar" type="submit">
-                    <i class="bi bi-save"></i>Salvar
-                </button>
-                </form>
+                </div>
             </div>
         </div>
+        <div class="detalhes">
+            <div class="humidade">
+                <i class="bx bx-water"></i>
+                <div class="text">
+                    <div class="info-humidade">
+                        <span>0%</span>
+                    </div>
+                    <p>Humidade</p>
+                </div>
+            </div>
+            <div class="vento">
+                <i class="bx bx-water"></i>
+                <div class="text">
+                    <div class="info-vento">
+                        <span>0 Km/h</span>
+                    </div>
+                    <p>Velocidade do vento</p>
+                </div>
+            </div>
+
+        </div>
+
     </div>
     <!--Carregando o JS-->
     <script src="js/script.js"></script>

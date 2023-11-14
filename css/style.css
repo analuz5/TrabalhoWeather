@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,500;1,600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: rebeccapurple;
+}
+
+.container {
+    position: relative;
+    width: 400px;
+    height: 555px;
+    background: purple;
+    border-radius: 16px;
+    padding: 20px;
+    color: #fff;
+}
+
+.pesquisar {
+    position: relative;
+    width: 100%;
+    height: 55px;
+    display: flex;
+    align-items: center;
+}
+
+.pesquisar i {
+    position: absolute;
+    left: 10px;
+    font-size: 28px;
+}
+
+.pesquisar input {
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 2555, .2);
+    outline: none;
+    border-radius: 10px;
+    font-size: 22px;
+    color: #fff;
+    font-weight: uppercase;
+    padding: 0 48px 0 42px;
+}
+
+.pesquisar input::placeholder {
+    color: #fff;
+    text-transform: capitalize;
+}
+
+.pesquisar button {
+    position: absolute;
+    right: 0;
+    width: 40px;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 28px;
+    color: #fff;
+    padding: 0 40px 0 5px;
+    cursor: pointer;
+}
+
+.weather-box {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.weather-box object{
+    width: 0%;
+}
+
+.weather-box .temperatura {
+    position: relative;
+    font-size: 550px;
+    line-height: 1;
+    font-weight: 700px;
+}

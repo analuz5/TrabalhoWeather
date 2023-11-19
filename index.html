@@ -16,15 +16,21 @@
 <body>
     <div class="container">
         <div class="search-box">
-            <i class="bx bxs-map"></i>
-            <input type="text" placeholder="Insira a cidade" id="cidade">
-            <button class="bx bx-search"></button>               
+            <i class="bx bxs-map">
+                <img src="images/vetores/mapa.svg">
+            </i>
+            <input type="text" placeholder="Insira a localização">
+            <button class="svg-button">
+                <img src="images/vetores/pesquisar.svg">
+            </button>    
+            <p class="city-hide">city hide</p>
+           
         </div>
         <div class="weather-box">
             <div class="box">
                 <div class="info-weather">
                     <div class="weather">
-                        <img src="images/tempo/limpo.png"">
+                        <img src="images/tempo/limpo.png">
                         <p class="temperature"></p>16<span>°C</span><p>
                         <p class="description">Broken Clouds </p>
                     </div>
@@ -33,7 +39,9 @@
         </div>
         <div class="weather-details">
             <div class="humidity">
-                <i class="bx bx-humidity"></i>
+                <i class="bx bx-humidity">
+                    <img src="images/vetores/agua.svg">
+                </i>
                 <div class="text">
                     <div class="info-humidity">
                         <span>0%</span>
@@ -42,7 +50,9 @@
                 </div>
             </div>
             <div class="wind">
-                <i class="bx bx-wind"></i>
+                <i class="bx bx-wind">
+                    <img src="images/vetores/vento.svg">
+                </i>
                 <div class="text">
                     <div class="info-wind">
                         <span>0 Km/h</span>
@@ -50,9 +60,14 @@
                     <p>Velocidade do vento</p>
                 </div>
             </div>
-
        </div>
-    
+       <div class="not-found">
+        <div class="box">
+            <img src="images/erro.png">
+            <p>Oops! Localização não encontrada!</p>
+        </div>
+       </div>
+   
     <!--Carregando o JS-->
     <script src="js/script.js"></script>
 </body>

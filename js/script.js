@@ -8,7 +8,7 @@ const cityHide = document.querySelector('.city-hide');
 
 // Adicionando um ouvinte de evento para o botão de pesquisa
 search.addEventListener('click', () => {
-    // Definindo uma chave de API vazia (deve ser preenchida com uma chave válida)
+    // Definindo uma chave de API vazia 
     const APIKey = '1d3b144a86fbb1a932dd52baa5059d9b';
     // Obtendo o valor inserido pelo usuário na caixa de pesquisa
     const city = document.querySelector('.search-box input').value;

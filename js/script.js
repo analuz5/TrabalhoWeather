@@ -9,7 +9,7 @@ const cityHide = document.querySelector('.city-hide');
 // Adicionando um ouvinte de evento para o botão de pesquisa
 search.addEventListener('click', () => {
     // Definindo uma chave de API vazia (deve ser preenchida com uma chave válida)
-    const APIKey = '';
+    const APIKey = '1d3b144a86fbb1a932dd52baa5059d9b';
     // Obtendo o valor inserido pelo usuário na caixa de pesquisa
     const city = document.querySelector('.search-box input').value;
 
@@ -18,7 +18,7 @@ search.addEventListener('click', () => {
         return;
 
     // Fazendo uma solicitação fetch para a API do tempo com base na cidade fornecida
-    fetch(`API_DA_PREVISAO_DO_TEMPO/${city}&appid=${APIKey}`).then(response => response.json()).then(json => {
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKey}`).then(response => response.json()).then(json => {
 
         // Verificando se a cidade não foi encontrada
         if (json.cod == "404") {

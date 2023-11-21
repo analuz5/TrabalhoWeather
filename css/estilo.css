@@ -1,15 +1,20 @@
+/* Importando a fonte Montserrat do Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,500;1,600&display=swap');
- 
+
+/* Resetando estilos padrão e aplicando a fonte Montserrat como fonte principal */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
 }
-header{
+
+/* Estilo do cabeçalho */
+header {
     background-color: #354488;
 }
- 
+
+/* Estilo do corpo da página */
 body {
     display: flex;
     justify-content: center;
@@ -20,20 +25,31 @@ body {
     background-position: center;
     overflow: hidden;
 }
- 
+
+/* Estilo do logotipo */
+#logo {
+    width: 25%;
+    left: 20%;
+    border-radius: 70%;
+    margin-left: 5%;
+}
+
+/* Estilo do contêiner principal */
 .container {
     position: relative;
     width: 400px;
     height: 100px;
-    background: rgba(255,255, 255, .1);
-    backdrop-filter:blur(30px);
-    border: 2px solid rgb(255,255, 255, .2);
+    left: 5%;
+    background: rgba(255, 255, 255, .1);
+    backdrop-filter: blur(30px);
+    border: 2px solid rgba(255, 255, 255, .2);
     border-radius: 16px;
     padding: 20px;
     color: #fff;
-    transition: height .6s ease;
+   
 }
- 
+
+/* Estilo da caixa de pesquisa */
 .search-box {
     position: relative;
     width: 100%;
@@ -41,15 +57,16 @@ body {
     display: flex;
     align-items: center;
 }
- 
+
+/* Estilo do ícone de pesquisa */
 .search-box i {
     position: absolute;
     left: 10px;
     font-size: 28px;
 }
- 
+
+/* Estilo da caixa de entrada de pesquisa */
 .search-box input {
- 
     position: absolute;
     width: 100%;
     height: 100%;
@@ -63,12 +80,14 @@ body {
     text-transform: uppercase;
     padding: 0 48px 0 42px;
 }
- 
+
+/* Estilo do texto de espaço reservado na caixa de pesquisa */
 .search-box input::placeholder {
     color: #fff;
     text-transform: capitalize;
 }
- 
+
+/* Estilo do botão de pesquisa */
 .search-box button {
     position: absolute;
     right: 0;
@@ -82,49 +101,57 @@ body {
     padding: 0 40px 0 5px;
     cursor: pointer;
 }
- 
-.weather-box{
+
+/* Estilo da caixa do tempo */
+.weather-box {
     text-align: center;
-    margin: 40px 0 ;
+    margin: 40px 0;
 }
- 
-.weather-box, .weather-details, .not-found{
+
+/* Ocultando elementos até que sejam ativados */
+.weather-box, .weather-details, .not-found {
     overflow: hidden;
     visibility: hidden;
 }
- 
-.weather-box.active, .weather-details.active, .not-found.active{
+
+/* Ativando elementos quando a classe .active está presente */
+.weather-box.active, .weather-details.active, .not-found.active {
     visibility: visible;
 }
- 
+
+/* Transição para esconder elementos */
 .weather-box .box,
-.not-found .box{
+.not-found .box {
     transform: translateY(-100%);
 }
- 
-.weather-box .box .info-weather{
+
+/* Transição para mostrar informações do tempo */
+.weather-box .box .info-weather {
     transform: translateY(-120%);
 }
- 
- 
+
+/* Transição para mostrar detalhes do tempo quando o contêiner está ativo */
 .container.active .weather-details .humidity .info-humidity,
 .container.active .weather-details .wind .info-wind,
-.container.active .weather-box .box .info-weather{
+.container.active .weather-box .box .info-weather {
     transform: translateY(0%);
     transition: transform 1s ease;
 }
- 
+
+/* Transição para mostrar elementos quando estão ativos */
 .weather-box.active .box,
-.not-found.active .box{
+.not-found.active .box {
     transform: translateY(0%);
     transition: transform 1s ease;
     transition-delay: .6s;
 }
- 
- 
-.weather-box img{
+
+/* Estilo da imagem do tempo */
+.weather-box img {
     width: 60%;
 }
+
+/* Estilo da temperatura */
 .weather-box .temperature {
     position: relative;
     font-size: 64px;
@@ -132,118 +159,144 @@ body {
     font-weight: 700;
     margin: 20px 0 6px -30px;
     color: #fff;
- }
- 
-.weather-box .temperature span{
+}
+
+/* Estilo do símbolo de grau */
+.weather-box .temperature span {
     position: absolute;
     font-size: 24px;
     margin-left: 4px;
 }
-.weather-box .description{
+
+/* Estilo da descrição do tempo */
+.weather-box .description {
     font-size: 22px;
     font-weight: 500;
     text-transform: capitalize;
 }
-.weather-details{
-    position: absolute;
+
+/* Estilo dos detalhes do tempo */
+.weather-details {
     bottom: 40px;
     left: 0;
     width: 100%;
     padding: 0 20px;
     display: flex;
 }
- 
-.weather-details .humidity, .weather-details .wind{
+/* Estilo dos detalhes de umidade e vento nos detalhes do tempo */
+.weather-details .humidity, .weather-details .wind {
     display: flex;
     align-items: center;
     width: 50%;
-    transform: translateY(-100%);
+  
 }
- 
-.weather-details .humidity .info-humidity, .weather-details .wind .info-wind{
+
+/* Estilo da animação de ocultar umidade e vento nos detalhes do tempo */
+.weather-details .humidity .info-humidity, .weather-details .wind .info-wind {
     transform: translateY(-100%);
     overflow: hidden;
 }
- 
-.weather-details.active .humidity, .weather-details.active .wind{
+
+/* Transição para mostrar umidade e vento nos detalhes do tempo quando ativos */
+.weather-details.active .humidity, .weather-details.active .wind {
     transform: translateY(0%);
     transition: transform 1s ease;
     transition-delay: 1.2s;
 }
- 
-.weather-details .humidity{
+
+/* Estilo do bloco de umidade nos detalhes do tempo */
+.weather-details .humidity {
     padding-left: 20px;
     justify-content: flex-start;
 }
- 
-.weather-details .wind{
-    padding: 20px;
+
+/* Estilo do bloco de vento nos detalhes do tempo */
+.weather-details .wind {
+    padding: 2px;
     justify-content: flex-end;
 }
- 
-.weather-details i{
+
+/* Estilo do ícone nos detalhes do tempo */
+.weather-details i {
     font-size: 56px;
     margin-right: 10px;
 }
- 
-.weather-details span{
+
+/* Estilo do texto nos detalhes do tempo */
+.weather-details span {
     display: inline-block;
     font-size: 22px;
     font-weight: 500;
 }
-.weather-details p{
+
+/* Estilo do parágrafo nos detalhes do tempo */
+.weather-details p {
     font-size: 14px;
     font-weight: 500;
 }
-.not-found{
+
+/* Estilo da mensagem de não encontrado */
+.not-found {
     position: absolute;
-    top:0;
+    top: 0;
     left: 0;
     width: 100%;
     text-align: center;
     margin-top: 110px;
 }
-.not-found img{
+
+/* Estilo da imagem de não encontrado */
+.not-found img {
     width: 65%;
 }
-.not-found p{
-    font-size:20px;
+
+/* Estilo do parágrafo de não encontrado */
+.not-found p {
+    font-size: 20px;
     font-weight: 500;
     margin-top: 12px;
 }
-.city-hide{
+
+/* Ocultar elemento com a classe 'city-hide' */
+.city-hide {
     display: none;
 }
- 
+
+/* Estilos dos elementos clonados */
 #clone-info-weather,
 #clone-info-humidity,
-#clone-info-wind{
+#clone-info-wind {
     position: absolute;
     transform: translateY(-100%);
 }
- 
-#clone-info-weather .weather{
+
+/* Transição para mostrar o clonado dos detalhes do tempo */
+#clone-info-weather .weather {
     transform: translateY(120%);
     transition: transform 1s ease, opacity 8s;
-    transition-delay: 0s, 2s;
+    transition-delay: 0s, 10s;
 }
- 
-.weather-box:not(.active) #clone-info-weather .weather{
+
+/* Esconder clonado do tempo quando o contêiner não está ativo */
+.weather-box:not(.active) #clone-info-weather .weather {
     opacity: 0;
     transition-delay: 0s;
 }
- 
-.active-clone#clone-info-weather .weather{
+
+/* Mostrar clonado dos detalhes do tempo quando ativo */
+.active-clone#clone-info-weather .weather {
     transform: translateY(0%);
 }
- 
+
+/* Transição para mostrar clonado de umidade e vento nos detalhes do tempo */
 #clone-info-humidity span,
-#clone-info-wind span{
+#clone-info-wind span {
     transform: translateY(100%);
     transition: transform 1s ease;
 }
- 
+
+/* Transição para mostrar clonado de umidade e vento nos detalhes do tempo quando ativos */
 .active.clone#clone-info-humidity span,
-.active.clone#clone-info-wind span{
+.active.clone#clone-info-wind span {
     transform: translateY(0%);
 }
